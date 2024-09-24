@@ -1,7 +1,30 @@
 package com.jastrzab;
 
+
+import com.jastrzab.designpatterns.Application;
+import com.jastrzab.designpatterns.creational.abstractFactory.AbstractFactoryApp;
+
+import java.util.HashMap;
+
 public class Main {
+
+    public static HashMap<String, Application> apps = new HashMap<>();
+    static  {
+        apps.put("abstract-factory-app", new AbstractFactoryApp());
+    }
+
+    public static void runApp(String appName) {
+        Application app = apps.get(appName);
+        if (app == null) {
+            throw new IllegalStateException("App not found: " + appName);
+        }
+
+        System.out.println("--- " + app.appName() + " ---");
+        app.startApplication();
+        System.out.println();
+    }
+
     public static void main(String[] args) {
-        System.out.println("Hello worlds");
+        runApp("abstract-factory-app");
     }
 }
