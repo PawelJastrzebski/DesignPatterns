@@ -5,6 +5,7 @@ import com.jastrzab.designpatterns.Application;
 import com.jastrzab.designpatterns.creational.abstractFactory.AbstractFactoryApp;
 import com.jastrzab.designpatterns.creational.builder.BuilderApp;
 import com.jastrzab.designpatterns.creational.factoryMethod.FactoryMethodApp;
+import com.jastrzab.designpatterns.creational.prototype.PrototypeApp;
 
 import java.util.HashMap;
 
@@ -15,6 +16,7 @@ public class Main {
         apps.put("abstract-factory-app", new AbstractFactoryApp());
         apps.put("builder-app", new BuilderApp());
         apps.put("factory-method-app", new FactoryMethodApp());
+        apps.put("prototype-app", new PrototypeApp());
     }
 
     public static void runApp(String appName) {
@@ -32,5 +34,6 @@ public class Main {
         runApp("abstract-factory-app");
         runApp("builder-app");
         runApp("factory-method-app");
+        runApp("prototype-app");
     }
 }
