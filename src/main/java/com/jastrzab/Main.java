@@ -9,6 +9,7 @@ import com.jastrzab.designpatterns.creational.prototype.PrototypeApp;
 import com.jastrzab.designpatterns.creational.singleton.SingletonApp;
 import com.jastrzab.designpatterns.structural.adapter.AdapterApp;
 import com.jastrzab.designpatterns.structural.bridge.BridgeApp;
+import com.jastrzab.designpatterns.structural.composite.CompositeApp;
 
 import java.util.HashMap;
 
@@ -23,6 +24,7 @@ public class Main {
         apps.put("singleton-app", new SingletonApp());
         apps.put("adapter-app", new AdapterApp());
         apps.put("bridge-app", new BridgeApp());
+        apps.put("composite-app", new CompositeApp());
     }
 
     public static void runApp(String appName) {
@@ -44,5 +46,6 @@ public class Main {
         runApp("singleton-app");
         runApp("adapter-app");
         runApp("bridge-app");
+        runApp("composite-app");
     }
 }
