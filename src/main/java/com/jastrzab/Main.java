@@ -3,6 +3,7 @@ package com.jastrzab;
 
 import com.jastrzab.designpatterns.Application;
 import com.jastrzab.designpatterns.behavioral.chainOfResponsibility.ChainOfResponsibilityApp;
+import com.jastrzab.designpatterns.behavioral.command.CommandApp;
 import com.jastrzab.designpatterns.creational.abstractFactory.AbstractFactoryApp;
 import com.jastrzab.designpatterns.creational.builder.BuilderApp;
 import com.jastrzab.designpatterns.creational.factoryMethod.FactoryMethodApp;
@@ -38,6 +39,7 @@ public class Main {
         apps.put("flyweight-app", new FlyweightApp());
         apps.put("proxy-app", new ProxyApp());
         apps.put("chain-of-responsibility-app", new ChainOfResponsibilityApp());
+        apps.put("command-app", new CommandApp());
     }
 
     public static void runApp(String appName) {
@@ -67,5 +69,6 @@ public class Main {
         runApp("flyweight-app");
         runApp("proxy-app");
         runApp("chain-of-responsibility-app");
+        runApp("command-app");
     }
 }
