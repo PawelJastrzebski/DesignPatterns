@@ -5,7 +5,9 @@ import com.jastrzab.designpatterns.structural.bridge.device.RadioDevice;
 import com.jastrzab.designpatterns.structural.bridge.device.TVDevice;
 import com.jastrzab.designpatterns.structural.bridge.remote.AdvancedRemote;
 import com.jastrzab.designpatterns.structural.bridge.remote.BasicRemote;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public class BridgeApp implements Application {
     @Override
     public String appName() {
@@ -22,12 +24,12 @@ public class BridgeApp implements Application {
 
         tvRemote.power();
         if (tv.isEnabled()) {
-            System.out.println("TV is on");
+             log.info("TV is on");
         }
 
         radioRemote.mute();
         if (radio.getVolume() == 0) {
-            System.out.println("Radio is muted");
+             log.info("Radio is muted");
         }
     }
 }

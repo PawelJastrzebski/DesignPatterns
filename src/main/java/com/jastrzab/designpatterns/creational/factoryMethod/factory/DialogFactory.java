@@ -2,11 +2,13 @@ package com.jastrzab.designpatterns.creational.factoryMethod.factory;
 
 import com.jastrzab.designpatterns.creational.abstractFactory.elements.Button;
 import com.jastrzab.designpatterns.creational.abstractFactory.elements.Input;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public abstract class DialogFactory {
 
     public void render() {
-        System.out.println("New Dialog:");
+         log.info("New Dialog:");
         Button button = createButton();
         Input input = createInput();
         button.render();

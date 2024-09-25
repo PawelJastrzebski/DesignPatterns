@@ -1,13 +1,16 @@
 package com.jastrzab.designpatterns.creational.abstractFactory.elements;
 
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
 public class WindowsInput implements Input {
     @Override
     public void render() {
-        System.out.println("Render Windows Input");
+        log.info("Render Windows Input");
     }
 
     @Override
     public void enter(String text) {
-        System.out.println("Windows Input text: " + text);
+        log.info("Windows Input text: {}", text);
     }
 }

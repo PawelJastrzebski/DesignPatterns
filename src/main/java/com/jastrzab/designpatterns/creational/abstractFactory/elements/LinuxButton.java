@@ -1,13 +1,16 @@
 package com.jastrzab.designpatterns.creational.abstractFactory.elements;
 
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
 public class LinuxButton implements Button{
     @Override
     public void render() {
-        System.out.println("Render Linux Button");
+         log.info("Render Linux Button");
     }
 
     @Override
     public void click() {
-        System.out.println("Linux Button Click");
+         log.info("Linux Button Click");
     }
 }

@@ -1,11 +1,14 @@
 package com.jastrzab.designpatterns.structural.facade.module;
 
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
 public class EmailService {
 
     public void sentEmail(String to, String topic, String body) {
-        System.out.println("Sending email");
-        System.out.println("To: " + to);
-        System.out.println("topic: " + topic);
-        System.out.println("boyd: " + body);
+         log.info("Sending email");
+        log.info("To: {}", to);
+        log.info("topic: {}", topic);
+        log.info("boyd: {}", body);
     }
 }

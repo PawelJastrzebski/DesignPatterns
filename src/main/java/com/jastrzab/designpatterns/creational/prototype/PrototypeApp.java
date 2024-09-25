@@ -2,7 +2,9 @@ package com.jastrzab.designpatterns.creational.prototype;
 
 import com.jastrzab.designpatterns.Application;
 import com.jastrzab.designpatterns.creational.prototype.shapes.Circle;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public class PrototypeApp implements Application {
     @Override
     public String appName() {
@@ -19,10 +21,10 @@ public class PrototypeApp implements Application {
         Circle c2 = (Circle) c1.clone();
         c2.setRadius(20);
         if (!c2.equals(c1)) {
-            System.out.println("Circle is different");
+             log.info("Circle is different");
         }
         if (c2.getX() == c1.getX() && c2.getY() == c1.getY()) {
-            System.out.println("Circles are in the same position");
+             log.info("Circles are in the same position");
         }
     }
 }

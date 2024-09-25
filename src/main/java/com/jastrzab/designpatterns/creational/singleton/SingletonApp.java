@@ -2,7 +2,9 @@ package com.jastrzab.designpatterns.creational.singleton;
 
 import com.jastrzab.designpatterns.Application;
 import lombok.SneakyThrows;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public class SingletonApp implements Application {
     @Override
     public String appName() {
@@ -17,7 +19,7 @@ public class SingletonApp implements Application {
         ServiceSingleton s2 = ServiceSingleton.getInstance();
 
         if (s1.value.equals(s2.value)) {
-            System.out.println("Singleton created: " + s1.value);
+            log.info("Singleton created: {}", s1.value);
         }
     }
 }

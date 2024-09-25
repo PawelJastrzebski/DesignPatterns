@@ -4,9 +4,11 @@ import com.jastrzab.designpatterns.Application;
 import com.jastrzab.designpatterns.structural.flyweight.forest.Tree;
 import com.jastrzab.designpatterns.structural.flyweight.forest.TreeType;
 import com.jastrzab.designpatterns.structural.flyweight.forest.TreeTypeFactory;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.*;
 
+@Log4j2
 public class FlyweightApp implements Application {
     @Override
     public String appName() {
@@ -51,9 +53,9 @@ public class FlyweightApp implements Application {
         }
 
         if (forest.size() == 100_000) {
-            System.out.println("Forest is ready");
+             log.info("Forest is ready");
         }
 
-        System.out.println("Tree types: " + TreeTypeFactory.cache.size());
+        log.info("Tree types: {}", TreeTypeFactory.cache.size());
     }
 }

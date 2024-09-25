@@ -13,13 +13,17 @@ import com.jastrzab.designpatterns.structural.composite.CompositeApp;
 import com.jastrzab.designpatterns.structural.decorator.DecoratorApp;
 import com.jastrzab.designpatterns.structural.facade.FacadeApp;
 import com.jastrzab.designpatterns.structural.flyweight.FlyweightApp;
+import com.jastrzab.designpatterns.structural.proxy.ProxyApp;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.HashMap;
 
+@Log4j2
 public class Main {
 
     public static HashMap<String, Application> apps = new HashMap<>();
-    static  {
+
+    static {
         apps.put("abstract-factory-app", new AbstractFactoryApp());
         apps.put("builder-app", new BuilderApp());
         apps.put("factory-method-app", new FactoryMethodApp());
@@ -31,6 +35,7 @@ public class Main {
         apps.put("decorator-app", new DecoratorApp());
         apps.put("facade-app", new FacadeApp());
         apps.put("flyweight-app", new FlyweightApp());
+        apps.put("proxy-app", new ProxyApp());
     }
 
     public static void runApp(String appName) {
@@ -39,12 +44,14 @@ public class Main {
             throw new IllegalStateException("App not found: " + appName);
         }
 
-        System.out.println("--- " + app.appName() + " ---");
+        log.info("--- {} ---", app.appName());
         app.startApplication();
-        System.out.println();
+        log.info("");
     }
 
     public static void main(String[] args) {
+        System.setProperty("log4j.configurationFile", "resources:log4j2.xml");
+
         runApp("abstract-factory-app");
         runApp("builder-app");
         runApp("factory-method-app");
@@ -56,5 +63,6 @@ public class Main {
         runApp("decorator-app");
         runApp("facade-app");
         runApp("flyweight-app");
+        runApp("proxy-app");
     }
 }

@@ -1,14 +1,21 @@
 package com.jastrzab.designpatterns.structural.composite.containers;
 
-public interface Container {
-    String getName();
-    default void start() {
-        System.out.println("Container start: " + getName());
+
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
+public abstract class Container {
+    abstract String getName();
+
+    public void start() {
+        log.info("Container start: {}", getName());
     }
-    default void restart() {
-        System.out.println("Container restart: " + getName());
+
+    public void restart() {
+        log.info("Container restart: {}", getName());
     }
-    default void stop() {
-        System.out.println("Container stop: " + getName());
+
+    public void stop() {
+        log.info("Container stop: {}", getName());
     }
 }

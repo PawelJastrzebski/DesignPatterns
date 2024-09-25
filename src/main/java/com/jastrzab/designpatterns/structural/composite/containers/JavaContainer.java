@@ -1,6 +1,6 @@
 package com.jastrzab.designpatterns.structural.composite.containers;
 
-public class JavaContainer implements Container {
+public class JavaContainer extends Container {
 
     private final String appName;
 

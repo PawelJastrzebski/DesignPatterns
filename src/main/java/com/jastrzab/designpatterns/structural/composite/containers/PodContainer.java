@@ -1,10 +1,13 @@
 package com.jastrzab.designpatterns.structural.composite.containers;
 
+import lombok.extern.log4j.Log4j2;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
 
-public class PodContainer implements Container {
+@Log4j2
+public class PodContainer extends Container {
 
     private final LinkedList<Container> containers = new LinkedList<>();
 
@@ -19,19 +22,19 @@ public class PodContainer implements Container {
 
     @Override
     public void start() {
-        System.out.println("Pod start:");
+        log.info("Pod start:");
         containers.forEach(Container::start);
     }
 
     @Override
     public void restart() {
-        System.out.println("Pod restart:");
+        log.info("Pod restart:");
         containers.forEach(Container::restart);
     }
 
     @Override
     public void stop() {
-        System.out.println("Pod stop:");
+        log.info("Pod stop:");
         containers.forEach(Container::stop);
     }
 }
