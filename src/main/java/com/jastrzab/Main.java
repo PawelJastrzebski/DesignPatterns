@@ -11,6 +11,7 @@ import com.jastrzab.designpatterns.structural.adapter.AdapterApp;
 import com.jastrzab.designpatterns.structural.bridge.BridgeApp;
 import com.jastrzab.designpatterns.structural.composite.CompositeApp;
 import com.jastrzab.designpatterns.structural.decorator.DecoratorApp;
+import com.jastrzab.designpatterns.structural.facade.FacadeApp;
 
 import java.util.HashMap;
 
@@ -27,6 +28,7 @@ public class Main {
         apps.put("bridge-app", new BridgeApp());
         apps.put("composite-app", new CompositeApp());
         apps.put("decorator-app", new DecoratorApp());
+        apps.put("facade-app", new FacadeApp());
     }
 
     public static void runApp(String appName) {
@@ -50,5 +52,6 @@ public class Main {
         runApp("bridge-app");
         runApp("composite-app");
         runApp("decorator-app");
+        runApp("facade-app");
     }
 }
