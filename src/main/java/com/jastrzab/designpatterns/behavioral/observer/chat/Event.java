@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class Event {
 
     public record AddUser(String userName) {}
-    public record PostMessage(String userName, String message) { }
+    public record PostMessage(String userName, String message) {}
 
     public AddUser addUser;
     public PostMessage postMessage;
