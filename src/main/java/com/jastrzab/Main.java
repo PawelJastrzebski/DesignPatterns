@@ -7,6 +7,7 @@ import com.jastrzab.designpatterns.behavioral.command.CommandApp;
 import com.jastrzab.designpatterns.behavioral.iterator.IteratorApp;
 import com.jastrzab.designpatterns.behavioral.observer.ObserverApp;
 import com.jastrzab.designpatterns.behavioral.strategy.StrategyApp;
+import com.jastrzab.designpatterns.behavioral.templateMethod.TemplateMethodApp;
 import com.jastrzab.designpatterns.behavioral.visitor.VisitorApp;
 import com.jastrzab.designpatterns.creational.abstractFactory.AbstractFactoryApp;
 import com.jastrzab.designpatterns.creational.builder.BuilderApp;
@@ -48,6 +49,7 @@ public class Main {
         apps.put("observer-app", new ObserverApp());
         apps.put("strategy-app", new StrategyApp());
         apps.put("visitor-app", new VisitorApp());
+        apps.put("template-method-app", new TemplateMethodApp());
     }
 
     public static void runApp(String appName) {
@@ -82,5 +84,6 @@ public class Main {
         runApp("observer-app");
         runApp("strategy-app");
         runApp("visitor-app");
+        runApp("template-method-app");
     }
 }
